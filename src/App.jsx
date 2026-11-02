@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import "./App.css";
+import PremiumExperience from "./components/PremiumExperience";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -530,6 +531,8 @@ function App() {
             </div>
           </section>
 
+<PremiumExperience />
+
           {/* PRODUCT SHOWCASE */}
           <section className="showcase-section" id="collection">
             <div className="section-heading reveal-up">
@@ -624,53 +627,7 @@ function App() {
           </section>
 
           {/* 3D SHOWCASE */}
-          <section className="three-section">
-            <div className="three-copy reveal-left">
-              <span className="eyebrow">BEYOND ORDINARY DESIGN</span>
-              <h2 className="split-title">
-                Experience furniture in 3D.
-              </h2>
-              <p>
-                Explore a new dimension of design.
-                Rotate and discover your furniture
-                from every angle.
-              </p>
-              <span className="three-hint">
-                <Sparkles size={15} /> DRAG TO ROTATE · SCROLL TO ZOOM
-              </span>
-            </div>
-
-            <div className="three-view reveal-right">
-              <Suspense fallback={<div className="three-loading">Loading 3D model...</div>}>
-                <Canvas
-                  camera={{ position: [5, 2.8, 7], fov: 38 }}
-                  dpr={[1, 1.75]}
-                >
-                  <ambientLight intensity={1.5} />
-                  <directionalLight position={[4, 5, 3]} intensity={2} />
-                  <Environment preset="apartment" />
-                  <ThreeDModel />
-                  <ContactShadows
-                    position={[0, -1.05, 0]}
-                    opacity={0.35}
-                    blur={2.5}
-                    scale={7}
-                  />
-                  <OrbitControls
-                    enablePan={false}
-                    enableZoom={true}
-                    enableRotate={true}
-                    autoRotate={true}
-                    autoRotateSpeed={0.55}
-                    minDistance={3.5}
-                    maxDistance={9}
-                    maxPolarAngle={Math.PI / 2}
-                  />
-                </Canvas>
-              </Suspense>
-              <span className="model-label">INTERACTIVE 3D MODEL / 001</span>
-            </div>
-          </section>
+         
 
           {/* ABOUT */}
           <section className="about-section section-padding" id="about">
